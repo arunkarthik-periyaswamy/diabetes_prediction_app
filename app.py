@@ -88,18 +88,18 @@ def diabetes_app():
     }
     input_df = pd.DataFrame(data)
 
-    # # Display the user input values in the form
-    # st.sidebar.subheader('User Input Values')
-    # st.sidebar.write(f"Age: {age}")
-    # st.sidebar.write(f"Gender: {gender}")
-    # st.sidebar.write(f"Hypertension: {hypertension}")
-    # st.sidebar.write(f"Heart Disease: {heart_disease}")
-    # st.sidebar.write(f"Smoking History: {smoking_history}")
-    # st.sidebar.write(f"BMI: {bmi}")
-    # st.sidebar.write(f"HbA1c Level: {hba1c_level}")
-    # st.sidebar.write(f"Blood Glucose Level: {blood_glucose_level}")
-    # st.sidebar.write(f"Health Risk Score: {health_risk_score}")
-    # st.sidebar.write(f"High Glucose: {high_glucose}")
+    # Display the user input values in the form
+    st.sidebar.subheader('User Input Values')
+    st.sidebar.write(f"Age: {age}")
+    st.sidebar.write(f"Gender: {gender}")
+    st.sidebar.write(f"Hypertension: {hypertension}")
+    st.sidebar.write(f"Heart Disease: {heart_disease}")
+    st.sidebar.write(f"Smoking History: {smoking_history}")
+    st.sidebar.write(f"BMI: {bmi}")
+    st.sidebar.write(f"HbA1c Level: {hba1c_level}")
+    st.sidebar.write(f"Blood Glucose Level: {blood_glucose_level}")
+    st.sidebar.write(f"Health Risk Score: {health_risk_score}")
+    st.sidebar.write(f"High Glucose: {high_glucose}")
 
     # Predict the outcome
     if st.button('Predict'):
