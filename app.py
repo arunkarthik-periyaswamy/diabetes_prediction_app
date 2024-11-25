@@ -3,12 +3,13 @@ import pandas as pd
 import joblib
 from PIL import Image
 
-# Loading the pickle model
+# Load the model
 model = joblib.load('Diabetes_Prediction_Model.pkl')
 
 def diabetes_app():
     st.set_page_config(page_title="Diabetes Prediction Tool", page_icon="🩺", layout="wide")
 
+    # Custom CSS
     st.markdown("""
         <style>
         .stApp {
@@ -29,14 +30,14 @@ def diabetes_app():
         </style>
     """, unsafe_allow_html=True)
 
-    # Ttitle to show on the webpage
+    # Header
     st.title('🩺 Diabetes Prediction Tool')
 
-    # Loading the image  
+    # Load and display image
     st.markdown(
     """
     <div style="text-align: center;">
-        <img src="https://www.onlymyhealth.com/immersive/addressing-india-diabetes-dilemma/images/OMH-diabets.gif" alt="Alt Text" width="300">
+        <img src="https://www.onlymyhealth.com/immersive/addressing-india-diabetes-dilemma/images/OMH-diabets.gif" alt="Alt Text" width="400">
     </div>
     """,
     unsafe_allow_html=True
@@ -91,15 +92,15 @@ def diabetes_app():
     # Display the user input values in the form
     st.sidebar.subheader('User Input Values')
     st.sidebar.write(f"Age: {age}")
-    st.sidebar.write(f"Gender: {gender}")
-    st.sidebar.write(f"Hypertension: {hypertension}")
-    st.sidebar.write(f"Heart Disease: {heart_disease}")
+    st.sidebar.write(f"Gender: {'Male' if gender == 1 else 'Female'}")
+    st.sidebar.write(f"Hypertension: {'Yes' if hypertension == 1 else 'No'}")
+    st.sidebar.write(f"Heart Disease: {'Yes' if heart_disease == 1 else 'No'}")
     st.sidebar.write(f"Smoking History: {smoking_history}")
     st.sidebar.write(f"BMI: {bmi}")
     st.sidebar.write(f"HbA1c Level: {hba1c_level}")
     st.sidebar.write(f"Blood Glucose Level: {blood_glucose_level}")
     st.sidebar.write(f"Health Risk Score: {health_risk_score}")
-    st.sidebar.write(f"High Glucose: {high_glucose}")
+    st.sidebar.write(f"High Glucose: {'Yes' if high_glucose == 1 else 'No'}")
 
     # Predict the outcome
     if st.button('Predict'):
